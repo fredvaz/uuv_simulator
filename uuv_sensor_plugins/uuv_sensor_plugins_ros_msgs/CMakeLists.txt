@@ -5,8 +5,11 @@ find_package(catkin REQUIRED geometry_msgs message_generation)
 
 add_message_files(
   FILES
+  Beacon.msg
+  BeaconParameters.msg  
   DVL.msg
   DVLBeam.msg
+  Hydrophone.msg
   PositionWithCovariance.msg
   PositionWithCovarianceStamped.msg
   ChemicalParticleConcentration.msg

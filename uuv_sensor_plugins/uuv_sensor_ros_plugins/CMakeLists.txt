@@ -199,6 +199,26 @@ target_link_libraries(uuv_gazebo_ros_camera_plugin ${catkin_LIBRARIES} ${GAZEBO_
 add_dependencies(uuv_gazebo_ros_camera_plugin ${catkin_EXPORTED_TARGETS})
 list(APPEND UUV_SENSOR_ROS_PLUGINS_LIST uuv_gazebo_ros_camera_plugin)
 
+###############################################################################
+
+add_library(uuv_gazebo_ros_hydrophone_plugin
+  src/HydrophoneROSPlugin.cc
+  src/ROSBasePlugin.cc
+  src/ROSBaseModelPlugin.cc)
+target_link_libraries(uuv_gazebo_ros_hydrophone_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_dependencies(uuv_gazebo_ros_hydrophone_plugin uuv_sensor_gazebo_msgs ${catkin_EXPORTED_TARGETS})
+list(APPEND UUV_SENSOR_ROS_PLUGINS_LIST uuv_gazebo_ros_hydrophone_plugin)
+
+###############################################################################
+
+add_library(uuv_gazebo_ros_beacon_plugin
+  src/BeaconROSPlugin.cc
+  src/ROSBasePlugin.cc
+  src/ROSBaseModelPlugin.cc)
+target_link_libraries(uuv_gazebo_ros_beacon_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_dependencies(uuv_gazebo_ros_beacon_plugin uuv_sensor_gazebo_msgs ${catkin_EXPORTED_TARGETS})
+list(APPEND UUV_SENSOR_ROS_PLUGINS_LIST uuv_gazebo_ros_beacon_plugin)
+
 #############
 ## Install ##
 #############
